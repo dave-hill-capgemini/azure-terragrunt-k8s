@@ -1,1 +1,1 @@
-##azire-terragrunt-k8s
+##azure-terragrunt-k8s

@@ -1,3 +1,10 @@
-# Learn Terraform - Provision AKS Cluster
+# Terraform AKS Cluster
 
-This repo is a companion repo to the [Provision an AKS Cluster tutorial](https://developer.hashicorp.com/terraform/tutorials/kubernetes/aks), containing Terraform configuration files to provision an AKS cluster on Azure.
+Creates:
+
+* Resource Group
+* VNet
+* Subnet
+* Cluster
+* System nodes
+* User nodes
