@@ -42,11 +42,11 @@ resource "azurerm_kubernetes_cluster" "this" {
   dns_prefix            = "${replace(var.location, "/\\s+/", "")}-${var.env}-k8s"
 
   default_node_pool {
-    name                = var.env
+    name                = "system"
     node_count          = var.system_node_count
     vm_size             = var.vm_size
     os_disk_size_gb     = 30
-    availability_zones  = var.zones
+    zones               = var.zones
     vnet_subnet_id      = azurerm_subnet.this.id
   }
 
@@ -59,10 +59,6 @@ resource "azurerm_kubernetes_cluster" "this" {
     type                = "SystemAssigned"
   }
 
-  role_based_access_control {
-    enabled             = true
-  }
-
   tags                  = var.tags
 }
 
@@ -71,7 +67,7 @@ resource "azurerm_kubernetes_cluster" "this" {
 ###########################################################################
 resource "azurerm_kubernetes_cluster_node_pool" "this" {
   name                  = "user"
-  availability_zones    = var.zones
+  zones                 = var.zones
   kubernetes_cluster_id = azurerm_kubernetes_cluster.this.id
   vm_size               = var.vm_size
   node_count            = var.user_node_count
