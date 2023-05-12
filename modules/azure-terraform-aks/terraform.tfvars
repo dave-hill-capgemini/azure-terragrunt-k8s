@@ -10,5 +10,5 @@ network_plugin     = "azure"
 network_policy     = "calico"
 tags               = {
   Terraform        = "true"
-  Environment      = "test"
+  Environment      = "dev"
 }
