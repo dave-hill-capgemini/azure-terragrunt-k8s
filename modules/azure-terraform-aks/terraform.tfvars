@@ -1,6 +1,6 @@
 env                = "dev"
 location           = "UK South"
-zones              = ["1"]                        # ["1","2","3"]
+zones              = ["1","2","3"]
 system_node_count  = "1"
 user_node_count    = "1"
 vm_size            = "Standard_D2ads_v5"

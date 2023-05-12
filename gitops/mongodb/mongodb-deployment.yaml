@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongodb-deployment
-  namespace: db-namespace
+  namespace: mongo-namespace
   labels:
     app: mongodb
 spec:
